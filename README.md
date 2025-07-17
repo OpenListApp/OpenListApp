@@ -1,3 +1,34 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=it">Itapano</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=OpenListApp&project=OpenListApp&lang=id">Bahasa Indonesia</a>
+      </div>
+    </div>
+  </details>
+</div>
+
 # OpenList App
 ### 一个AList、OpenList跨平台客户端,目前内置OpenList服务器，不需要额外连接服务器，支持iOS、macOS、Windows、Android、Linux
 
