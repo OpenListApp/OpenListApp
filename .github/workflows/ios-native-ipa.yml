@@ -1,0 +1,62 @@
+name: iOS Native Liquid Glass (unsigned IPA)
+
+# 原生 SwiftUI 客户端(ios-native/),在 macOS Runner 上用 Xcode 归档,
+# 产出未签名 IPA 工件(不依赖任何证书/描述文件)。
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'ios-native/**'
+      - '.github/workflows/ios-native-ipa.yml'
+      - '!**.md'
+
+jobs:
+  build-unsigned-ipa:
+    name: Build unsigned IPA (SwiftUI + Liquid Glass)
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: ios-native
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select latest stable Xcode (iOS 26 SDK required for Liquid Glass)
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 'latest-stable'
+
+      - name: Show toolchain
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks | grep -i ios
+
+      - name: Archive (unsigned)
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project OpenListApp.xcodeproj \
+            -scheme OpenListApp \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/OpenListApp.xcarchive \
+            archive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            | xcbeautify
+
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/OpenListApp.xcarchive/Products/Applications/OpenListApp.app build/Payload/
+          cd build
+          zip -qry OpenListApp-unsigned.ipa Payload
+          ls -lh OpenListApp-unsigned.ipa
+
+      - name: Upload unsigned IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenListApp-iOS-unsigned-ipa
+          path: ios-native/build/OpenListApp-unsigned.ipa
+          if-no-files-found: error

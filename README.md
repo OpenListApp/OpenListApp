@@ -1,35 +1,38 @@
-# OpenList App  
-## 专门为移动端编写了相同功能的程序，名字启发于Yaml（Yet Another Markup Language）和Yamux（Yet Another Multiplexer）：Yalist（Yet Another List）  
-## 在谷歌应用市场市场提供下载：https://play.google.com/store/apps/details?id=cloud.iothub.yalist 或者https://github.com/OpenListApp/OpenListApp/releases/download/v2025.07.292/Yalist-app-release.apk     
-## 在苹果应用市场提供下载：https://apps.apple.com/cn/app/yalist/id6760989595  
-### 一个AList、OpenList跨平台客户端,目前内置OpenList服务器，不需要额外连接服务器，支持iOS、macOS、Windows、Android、Linux
+# OpenList App
 
-### 内置[DDNS-GO(MIT)](https://github.com/jeessy2/ddns-go)，如果设备具**有公网IP**可以借助DDNS-GO进行远程访问,将手机当做远程服务器
+OpenList / AList 的原生 iOS 客户端,基于 SwiftUI 与 iOS 26 苹果原生液态玻璃(Liquid Glass)构建,无任何 WebView。
 
-### 内置[GATEWAY-GO(MIT)](https://github.com/OpenIoTHub/gateway-go)，如果设备**没有公网IP**可以借助GATEWAY-GO进行远程访问,将手机当做远程服务器
+- **iOS**:本仓库 `ios-native/` 目录(Xcode 工程)
+- **Web**:由服务器自带网页端提供,浏览器访问服务器地址即可使用
 
-### 通过CI构建，本项目不提供api服务器，服务器由上游OpenList等社区提供
-### 项目提供两套UI，一套是原先的Web界面直接加载，另一套是目前已经开发完核心功能的原生界面，目前默认Linux使用原生界面其他都使用Web界面
+Android、Windows、Linux、macOS 端代码已移除。
 
-### 本项目作为前端项目参考AList前端项目以宽松的[MIT](LICENSE)代码许可证发布，欢迎改包名后发布应用市场（特别是iOS），需要始终声明基于本项目开发的项目(带本项目地址)
+## 功能
 
-#### 关于编译本项目：
-* 需要从[OpenListLib](https://github.com/OpenListApp/OpenListLib/releases)下载相关库进行编译
+- 登录 / 访客模式(跳过登录)
+- 存储管理:添加(动态驱动表单)、启用 / 停用、删除
+- 文件浏览:目录导航、图片缩略图与查看、视频播放、删除 / 下载
+- 任务:未完成 / 已完成与进度
+- 我的:服务器设置、退出登录
 
-### QQ群:251405953
-![QQGroup.jpg](assets/images/contact/QQGroup.jpg)
-### 项目结构
-* [openlist](/lib/main.dart)APP入口项目
-* [openlist_api](/openlist_api)核心api封装
-* [openlist_utils](/openlist_utils)工具
-* [openlist_background_service](/openlist_background_service)openlist(AList)库封装
-* [openlist_global](/openlist_global)全局共享代码
-* [openlist_config](/openlist_config)配置文件
-* [openlist_native_ui](/openlist_native_ui) 原生界面代码
-* [openlist_web_ui](/openlist_web_ui)web界面代码(目前默认使用)
+## 本地构建
 
-![files](assets/images/android/files.png) ![storages](assets/images/macos/storages.png) ![files](assets/images/macos/files.png) ![storages](assets/images/ios/storages.png) ![files](assets/images/ios/files.png) ![storages](assets/images/windows/storages.png)
+需要 Xcode 26 或更高版本(iOS 26 SDK):
 
-### 注意事项：
-* 初始用户遵从上游默认权限，代表着默认webdav不开启，请注意
-* 其他
+```bash
+cd ios-native
+open OpenListApp.xcodeproj
+```
+
+选择 OpenListApp scheme,直接运行。
+
+## CI 自动构建
+
+推送 `ios-native/**` 的改动,或在 Actions 页手动触发后,工作流会自动构建**未签名 IPA**,在构建页底部的 Artifacts 下载 `OpenListApp-iOS-unsigned-ipa`:
+
+- TrollStore 可直接安装
+- 或用自有证书重签后安装
+
+## 许可证
+
+GPL-3.0
