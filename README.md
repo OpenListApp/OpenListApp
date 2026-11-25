@@ -1,7 +1,7 @@
 # OpenList App  
 ## 专门为移动端编写了相同功能的程序，名字启发于Yaml（Yet Another Markup Language）和Yamux（Yet Another Multiplexer）：Yalist（Yet Another List）  
 ## 在谷歌应用市场市场提供下载：https://play.google.com/store/apps/details?id=cloud.iothub.yalist 或者https://github.com/OpenListApp/OpenListApp/releases/download/v2025.07.292/Yalist-app-release.apk     
-## 在苹果应用市场提供下载：https://apps.apple.com/cn/app/yalist/id6760989595  
+
 ### 一个AList、OpenList跨平台客户端,目前内置OpenList服务器，不需要额外连接服务器，支持iOS、macOS、Windows、Android、Linux
 
 ### 内置[DDNS-GO(MIT)](https://github.com/jeessy2/ddns-go)，如果设备具**有公网IP**可以借助DDNS-GO进行远程访问,将手机当做远程服务器
